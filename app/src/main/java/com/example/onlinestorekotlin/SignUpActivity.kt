@@ -19,9 +19,10 @@ class SignUpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        if(Person.email!=null){
-            intentToHomeScreen()
-        }
+//        if(Person.email!=null){
+//            finish()
+//            intentToHomeScreen()
+//        }
 
         activity_sign_up_btnSignUP.setOnClickListener{
 

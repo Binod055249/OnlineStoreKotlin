@@ -15,10 +15,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        if(Person.email!=null){
-            intentToHomeScreen()
-        }
+//
+//        if(Person.email!=null){
+//            finish()
+//           intentToHomeScreen()
+//        }
 
         activity_main_btnSignUp.setOnClickListener {
             var intent: Intent = Intent(this@MainActivity, SignUpActivity::class.java)
