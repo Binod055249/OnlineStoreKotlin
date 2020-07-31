@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CartProductsActivity"></activity>
+        <activity android:name=".FinalizeShoppingActivity"></activity>
+        <activity android:name=".CartProductsActivity" />
         <activity android:name=".FetchEProductsActivity" />
         <activity android:name=".HomeScreen" />
         <activity android:name=".SignUpActivity" />
