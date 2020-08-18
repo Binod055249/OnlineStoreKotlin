@@ -22,7 +22,8 @@ class CartProductsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cart_products)
 
 
-        var cartProductsUrl="http://192.168.42.102/OnlineStoreApp/fetch_temporary_order.php?email=${Person.email}"
+        var cartProductsUrl="http://onlinestoreappkotlin.epizy.com/OnlineStoreApp/fetch_temporary_order.php?" +
+                "email=${Person.email}"
        var cartProductList=ArrayList<String>()
         var requestQ=Volley.newRequestQueue(this@CartProductsActivity)
         var jsonAR= JsonArrayRequest(Request.Method.GET,cartProductsUrl,null,
@@ -36,7 +37,8 @@ class CartProductsActivity : AppCompatActivity() {
                         "${response.getJSONObject(joIndex).getString("email")}\n" +
                         "${response.getJSONObject(joIndex).getInt("amount")}")
             }
-            var cartProductsAdapter=ArrayAdapter(this@CartProductsActivity,android.R.layout.simple_list_item_1,cartProductList)
+            var cartProductsAdapter=ArrayAdapter(this@CartProductsActivity,
+                android.R.layout.simple_list_item_1,cartProductList)
             cartProductsListview.adapter=cartProductsAdapter
 
         },Response.ErrorListener { error ->
@@ -66,7 +68,7 @@ class CartProductsActivity : AppCompatActivity() {
         }
         else if(item?.itemId==R.id.declineOrderItem){
 
-            var declineUrl="http://192.168.42.102/OnlineStoreApp/decline_order.php?email=${Person.email}"
+            var declineUrl="http://onlinestoreappkotlin.epizy.com/OnlineStoreApp/decline_order.php?email=${Person.email}"
             var requestQ=Volley.newRequestQueue(this)
             var stringRequest=StringRequest(Request.Method.GET,declineUrl,
             Response.Listener { response ->
@@ -83,7 +85,7 @@ class CartProductsActivity : AppCompatActivity() {
             requestQ.add(stringRequest)
 
         }else if(item?.itemId==R.id.verifyOrderItem){
-            var verifyOrderUrl="http://192.168.42.102/OnlineStoreApp/verify_order.php?email=${Person.email}"
+            var verifyOrderUrl="http://onlinestoreappkotlin.epizy.com/OnlineStoreApp/verify_order.php?email=${Person.email}"
             var requestQ=Volley.newRequestQueue(this)
             var stringRequest=StringRequest(Request.Method.GET,verifyOrderUrl,
             Response.Listener { response ->

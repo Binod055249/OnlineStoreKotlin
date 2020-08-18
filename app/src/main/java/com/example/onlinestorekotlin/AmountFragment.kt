@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.DialogFragment
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -26,8 +27,9 @@ class AmountFragment : android.app.DialogFragment(){
         var btnAddToCart=fragmentView.findViewById<ImageButton>(R.id.btnAddToCart)
 
         btnAddToCart.setOnClickListener {
-           var pToUrl= "http://192.168.42.102/OnlineStoreApp/insert_temporary_order.php?" +
-                   "email=${Person.email}&product_id=${Person.addToCartProductId}&amount=${edtEnterAmount.text.toString()}"
+           var pToUrl= "http://onlinestoreappkotlin.epizy.com/OnlineStoreApp/insert_temporary_order.php?" +
+                   "email=${Person.email}&product_id=${Person.addToCartProductId}" +
+                   "&amount=${edtEnterAmount.text.toString()}"
             var requestQ=Volley.newRequestQueue(activity)
             var stringRequest=StringRequest(Request.Method.GET,pToUrl,
             Response.Listener { response ->

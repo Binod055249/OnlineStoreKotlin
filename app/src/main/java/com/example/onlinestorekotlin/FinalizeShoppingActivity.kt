@@ -26,7 +26,9 @@ class FinalizeShoppingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finalize_shopping)
 
-        var calculateUrl="http://192.168.42.102/OnlineStoreApp/calculate_total_price.php?invoice_num=${intent.getStringExtra("LATEST_INVOICE_NUMBER")}"
+        var calculateUrl="http://onlinestoreappkotlin.epizy.com/OnlineStoreApp/" +
+                "calculate_total_price.php?invoice_num=" +
+                "${intent.getStringExtra("LATEST_INVOICE_NUMBER")}"
         var requestQ=Volley.newRequestQueue(this)
         var stringRequest=StringRequest(Request.Method.GET,calculateUrl,
         Response.Listener { response ->

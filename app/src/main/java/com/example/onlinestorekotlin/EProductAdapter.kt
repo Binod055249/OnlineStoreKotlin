@@ -12,8 +12,10 @@ import kotlinx.android.synthetic.main.e_product_row.view.*
 
 class EProductAdapter(var context: Context,var arrayList: ArrayList<EProducts>):
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-            val productView=LayoutInflater.from(context).inflate(R.layout.e_product_row,parent,false)
+            val productView=LayoutInflater.from(context)
+                .inflate(R.layout.e_product_row,parent,false)
         return ProductViewHolder(productView)
 
     }
@@ -34,7 +36,7 @@ class EProductAdapter(var context: Context,var arrayList: ArrayList<EProducts>):
            itemView.txtName.text=name
              itemView.txtPrice.text=price.toString()
 
-             var picUrl="http://192.168.42.102/OnlineStoreApp/osimages/"
+             var picUrl="http://onlinestoreappkotlin.epizy.com/OnlineStoreApp/osimages/"
              picUrl=picUrl.replace(" ","%20")
              Picasso.get().load(picUrl+picture).into(itemView.imgProduct)
 

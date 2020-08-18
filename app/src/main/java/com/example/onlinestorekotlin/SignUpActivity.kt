@@ -28,8 +28,8 @@ class SignUpActivity : AppCompatActivity() {
 
             if((edtSignUpPassword.text.toString()).equals(edtSignUPConfirmPassword.text.toString())){
 
-                val signUpUrl:String="http://192.168.42.102/OnlineStoreApp/join_new_user.php?email="+
-                        edtSignUpEmail.text.toString()+
+                val signUpUrl:String="http://onlinestoreappkotlin.epizy.com/OnlineStoreApp/join_new_user.php?email=" +
+                        "$edtSignUpEmail.text.toString()"+
                         "&username="+edtSignUpUsername.text.toString()+
                         "&password="+edtSignUpPassword.text.toString()
                 val requestQ:RequestQueue= Volley.newRequestQueue(this@SignUpActivity)

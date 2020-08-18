@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         }
             activity_main_btnLogin.setOnClickListener{
 
-                val loginUrl:String= "http://192.168.42.102/OnlineStoreApp/login_app_user.php?email="+
+                val loginUrl:String= "http://onlinestoreappkotlin.epizy.com/OnlineStoreApp/login_app_user.php?email="+
                         edtLoginEmail.text.toString()+"&password="+edtLoginPassword.text.toString()
                 val requestQ=Volley.newRequestQueue(this@MainActivity)
                 val stringRequest=StringRequest(Request.Method.GET,loginUrl,

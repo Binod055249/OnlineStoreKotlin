@@ -19,7 +19,7 @@ class FetchEProductsActivity : AppCompatActivity() {
 
         val selectBrand:String= intent.getStringExtra("BRAND")
         txtBrandName.text="Products of $selectBrand"
-      val productsUrl =  "http://192.168.42.102/OnlineStoreApp/fetch_eproducts.php?brand=$selectBrand"
+      val productsUrl =  "http://onlinestoreappkotlin.epizy.com/OnlineStoreApp/fetch_eproducts.php?brand=$selectBrand"
       val requestQ= Volley.newRequestQueue(this@FetchEProductsActivity)
        val jsonAR=JsonArrayRequest(Request.Method.GET,productsUrl,null,
        Response.Listener { response ->

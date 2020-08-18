@@ -17,7 +17,7 @@ class HomeScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
 
-        var brandsUrl="http://192.168.42.102/OnlineStoreApp/fetch_brands.php"
+        var brandsUrl="https://onlinestoreappkotlin.epizy.com/OnlineStoreApp/fetch_brands.php"
         var brandsList=ArrayList<String>()
         var requestQ:RequestQueue=Volley.newRequestQueue(this@HomeScreen)
         var jsonAR=JsonArrayRequest(Request.Method.GET,brandsUrl,null,
